@@ -1,0 +1,47 @@
+body{
+    background-image: url(/fondo.jpg);
+    background-repeat: no-repeat;
+    background-position: 30%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    ;
+}
+
+#foto{
+    border-radius: 10%;
+    margin-right: 20px;
+    bott
+}
+
+.container{
+    display: flex;
+    background-color: #6eb3cc;
+    
+}
+
+button{
+    margin-top: 2%;
+    margin-left: 2%;
+    border-radius: 30%;
+    height: 50px;
+    cursor: pointer; 
+}
+
+button:hover {
+    background-color: #0056b3;
+    color: #f8f9fa; 
+}
+
+span{
+    font-weight: bold;
+    color: rgb(27, 175, 175);
+}
+
+h1 {
+    color: rgb(18, 177, 177);
+
+}
+
+p{
+    color: azure;
+    
+}
