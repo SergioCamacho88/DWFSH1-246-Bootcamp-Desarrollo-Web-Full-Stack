@@ -1,0 +1,24 @@
+.navbar-brand p{
+    font-size: large;
+    font-weight: bold;
+    color: whitesmoke;
+    padding: 5px auto;
+}
+
+.contexto{
+    color:rgba(70, 68, 59, 0.473);
+    font-weight: bold;
+}
+
+.row{
+    display: flex;
+    justify-content: space-around;
+}
+
+.card{
+    margin-bottom: 2%;
+}
+
+.card-img-top{
+    padding: 25px;
+}

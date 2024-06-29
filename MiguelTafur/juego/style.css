@@ -1,0 +1,118 @@
+body {
+    margin:0;
+    overflow:hidden;
+    user-select:none;
+    font-family: 'Pacifico', cursive;
+    
+}
+
+#fader {
+    display:none;
+    position:fixed;
+    z-index:6;
+    width:100%;
+    height:100%;
+   
+    background:rgba(0,0,0,1);
+
+}
+
+#homescreen {
+    display:block;
+    position:fixed;
+    z-index:7;
+    width:100%;
+    height:100%;
+    
+    background-color:#704947;
+    text-align:center;
+    
+    
+    font-size:40px;
+    color:#cccccc;
+
+}
+#homescreen p {
+    font-size:20px;
+}
+
+#homescreen h2{
+    display:block;
+    font-size:30px;
+    margin:5%;
+}
+
+#button-play{
+    display: block;
+    margin: 60px auto;
+    padding: 15px;
+    border: none;
+    outline: none;
+
+    width: 280px;
+    height:100px;
+    font-family: 'Indie Flower', cursive, sans-serif;
+    font-size: 50px;
+    background-color: #cea68e;
+    border-radius:10px;
+    color: #fff;
+} 
+
+
+#button-restart {
+    display: none;
+    position:fixed;
+    z-index:8;
+    padding: 15px;
+    border: none;
+    outline: none;
+    top:calc(50% - 50px);
+    left:calc(50% - 140px);
+    width: 280px;
+    height:100px;
+    font-family: 'Indie Flower', cursive, sans-serif;
+    font-size: 50px;
+    
+    border-radius:10px;
+    color: #fff;
+    background-color: rgba(206, 166, 142, 0.2);
+}
+
+#button-play:hover {
+    background-color: #bc957e;
+} 
+#button-play:active {
+    background-color: #ad8974;
+}
+#homescreen .controls {
+    display:inline-block;
+    width:50%;
+    font-size:20px;
+    
+}
+
+
+canvas{
+    display:block;
+    
+}
+
+#cb {
+    display:none;
+    position:fixed;
+    z-index:4;
+}
+
+#info {
+    font-family: 'Pacifico', cursive;
+    position:fixed;
+    z-index:3;
+    
+    width:100%;
+    top:0px;
+    text-align:center;
+    
+    font-size:50px;
+    color:#cccccc;
+}
+

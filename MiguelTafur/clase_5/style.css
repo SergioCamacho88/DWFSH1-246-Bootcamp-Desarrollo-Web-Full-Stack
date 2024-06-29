@@ -1,0 +1,64 @@
+
+#icon{
+    font-size:20px;
+    color:rgb(52, 141, 230);
+    
+}
+
+#img_concierto{
+    width: 500px;
+    height: 500px;
+}
+
+.info-row {
+    margin-top: -300px; 
+}
+
+.calendar-icons {
+    display: flex;
+}
+
+.border{
+    width: 100px;
+    height: 120px;
+    margin: 2%;
+    border: 2px solid black;
+    border-radius: 5%;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .161);
+    text-align: center;
+    font-size:small;
+}
+
+.menu{
+    display: flex;
+    justify-content: end;
+}
+
+#link {
+    margin: 2%;
+    color: white; 
+    text-decoration: none; 
+}
+
+#logo{
+    height: 100px;
+    width:  150px;
+}
+
+h1{
+    color: #0e4c94;
+}
+
+#navbar{
+    background-color: #0071ce
+}
+
+hr{
+    border: 2px solid #b7b7b7;
+    color: #b7b7b7;
+}
+
+.numberday{
+    color: #0e4c94;
+    font-weight: bold;
+}
