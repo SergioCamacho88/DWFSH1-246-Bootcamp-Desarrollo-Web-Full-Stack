@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+
+body{
+    font-family: "Noto Sans JP", sans-serif;
+    background-color: black;
+    color: gray;
+
+}
+
+h1{
+    color: white;
+}
+nav{
+    padding-top: 10px;
+}
+#login {
+    text-align: right;
+}
+
+#login a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+
+    padding: 10px 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+#login a:hover{
+    color: black;
+    background-color: white;
+}
+#logoDisney{
+    height: 100px;
+}
+#cta_banner{
+    text-decoration: none;
+    background-color: #6421FF;
+    color: white;
+    padding: 10px 25%;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+.colorWhite{
+    color: white;
+}
+.letterSmall{
+    font-size: 10px;
+}
+
+#container1{
+    margin-left: 100px;
+    width: 500px;
+}

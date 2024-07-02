@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <a href="index.html"Inicio></a>
+
+    <form action="https://www.w3schools.com/action_page.php"
+    target="_blank"
+    method="post">
+
+        <label for="name">Nombres</label>
+        <input 
+        type="text" 
+        value=""
+        placeholder="Escriba sus Nombres" 
+        id="name" 
+        name="name">
+        <br>
+
+        
+        <label for="lastname">Apellidos</label>
+        <input 
+        type="text" 
+        placeholder="Escriba sus apellidos"  
+        id="lastname" 
+        name="lastname">
+        <br>
+        
+        <label for="phone">Telefono</label>
+        <input 
+        type="number" 
+        placeholder="Escriba su Telefono"  
+        id="phone" 
+        name="phone">
+        <br>
+        
+        <label for="description">Descripcion</label>
+        <textarea 
+        name="description" 
+        id="description"> 
+        placeholder="Escriba su Descripcion"  
+        rows="10"
+        cols="10">
+        </textarea>
+        <br>
+        
+        <label for="country">Pais</label>
+        <select id="country" name="country">
+            <option value="">Opciones</option>
+            <option value="Colombia">Opciones</option>
+            <option value="Otros">Otros</option>
+        </select>
+        
+        <label for="country">Sexo</label><br>
+        <input type="radio" id="age1" name="sex" value="Men"/>
+        <label for="age1">Hombre</label><br>
+
+        <input type="radio" id="age2" name="sex" value="Woman"/>
+        <label for="age2">Mujer</label><br>
+
+        <input type="submit" value="Enviar"/><br>
+        <input type="reset" value="Borrar"/>
+        <br>
+        
+    </form>
+   
+  
+</body>
+</html>

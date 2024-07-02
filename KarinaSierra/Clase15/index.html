@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <script>
+        
+        function operacion(num1, num2 ){
+            this.num1 = num1
+            this.num2 = num2
+            this.suma = function(){
+                console.log(this.num1, "+", this.num2, "=", this.num1 + this.num2)
+            }
+            this.resta = function(){
+                console.log(num1, "-", num2, "=", num1 - num2)
+            }
+            this.multiplicacion = function(){
+                console.log(num1, "*", num2, "=", num1 * num2)
+            }
+            this.division = function(){
+                console.log(num1, "/", num2, "=", num1 / num2)
+            }
+            this.mayor = function(){
+                if(num1 > num2){
+                    console.log("El numero mayor es: ", num1)
+                }
+                else{
+                    console.log("El numero mayor es: ", num2)
+                }
+            }
+            this.menor = function(){
+                if(num1 < num2){
+                    console.log("El numero menor es: ", num1)
+                }
+                else{
+                    console.log("El numero menor es: ", num2)
+                }
+            }
+        }
+
+        let operacion1 = new operacion(3,8)
+
+          
+    
+      
+    </script>
+</body>
+</html>
