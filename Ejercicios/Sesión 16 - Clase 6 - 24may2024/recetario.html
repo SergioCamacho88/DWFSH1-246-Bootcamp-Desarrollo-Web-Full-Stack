@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Proyecto: Libro de Recetas</title>
+    <meta charset="utf-8">
+    <style>
+        body {
+            background-color: aliceblue;
+        }
+        * {
+            border-collapse: separate;
+        }
+        thead {
+            color: red;
+        }
+        h1 {
+            text-align: center;
+            color: blue;
+            text-shadow: 2px 2px 4px black;
+            font-size: 60px;
+        }
+        h2 {
+            text-align: center;
+        }
+        h3 {
+            color: blue;
+            text-shadow: 2px 2px 4px rgb(50, 26, 189);
+            font-size: 30px;
+        }
+        table {
+            width: 50%;
+            margin-top: 2rem;
+        }
+        td,
+        th {
+            border: 1px solid black;
+        }
+        section {
+            background-color: antiquewhite;
+            width : 70%;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid rgba(71, 65, 65, 0.3);
+            margin: 10px;
+            box-shadow: 15px 15px 30px rgba(71, 65, 65, 0.3);
+        }
+        button a {
+            text-decoration: none;
+            color : white;
+        }
+        .button {
+            border-radius: 5px;
+            border: 1px solid rgba(39, 189, 71,1);
+            padding: 15px 32px;
+            text-align: center;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 70%;
+            cursor: pointer;
+            background-color: rgba(45, 134, 102, 0.747);
+            box-shadow: 15px 15px 30px rgba(71, 65, 65, 0.3);
+        }
+        </style>
+</head>
+
+<body>
+
+    <h1 id="inicio">Libro de Recetas de Jorge</h1>
+    <div style="text-align: center;">
+        <img src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/food/ice-cream.png"
+            alt="Comida" height="100">
+    </div>
+    <section>
+        <h2>Contenido:</h2>
+        <ol>
+            <li><a href="#receta1">Casero</a></li>
+            <li><a href="#receta2">Arroz con leche</a></li>
+            <li><a href="#receta3">Espagueti con carne</a></li>
+        </ol>
+    </section>
+    <section>
+        <h3 id="receta1">Casero</h3>
+        <ul>
+            <li>Tiempo: 20 min</li>
+            <li>Cantidad: 2 personas</li>
+        </ul>
+        <table>
+            <thead>
+                <tr>
+                    <th>Ingredientes</th>
+                    <th>Cantidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Carne</td>
+                    <td>1 libra</td>
+                </tr>
+                <tr>
+                    <td>Arroz</td>
+                    <td>1 libra</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>papa</td>
+                    <td>4 unidades</td>
+                </tr>
+            </tfoot>
+        </table>
+        <p><strong>Paso 1:</strong> Cocinar arroz......
+        </p>
+        <p><strong>Paso 2:</strong> Cocinar papa-.......
+        </p>
+        <p><strong>Paso 3:</strong> Cocinar carne.......
+        </p>
+        <p><em>Fuente: <a href="https://www.directoalpaladar.com/recetas-de-arroces/siete-maneras-cocinar-arroz-para-disfrutarlo-cada-dia-semana-forma-variada">Para más recetas visita nuetra página</a></em></p>
+    </section>
+    <button class="button"><a href="#inicio">Subir</a></button>
+    <section>
+        <h3 id="receta2">Arroz con leche</h3>
+        <ul>
+            <li>Tiempo: 20 min</li>
+            <li>Cantidad: 4 personas</li>
+        </ul>
+        <table>
+            <thead>
+                <tr>
+                    <th>Ingredientes</th>
+                    <th>Cantidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Canela</td>
+                    <td>5 gramos</td>
+                </tr>
+                <tr>
+                    <td>Arroz</td>
+                    <td>1 libra</td>
+                </tr>
+                <tr>
+                    <td>leche</td>
+                    <td>2 tasa</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><strong>Paso 1:</strong> Cocinar arroz......
+        </p>
+        <p><strong>Paso 2:</strong> Aplicar canela-.......
+        </p>
+        <p><em>Fuente: <a href="https://www.directoalpaladar.com/recetas-de-arroces/siete-maneras-cocinar-arroz-para-disfrutarlo-cada-dia-semana-forma-variada">Para más recetas visita nuetra página</a></em></p>
+    </section>
+    <button class="button"><a href="#inicio">Subir</a></button>
+    <section>
+        <h3 id="receta3">Espagueti con carne</h3>
+        <ul>
+            <li>Tiempo: 20 min</li>
+            <li>Cantidad: 4 personas</li>
+        </ul>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Ingredientes</th>
+                    <th>Cantidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Carne</td>
+                    <td>1 libra</td>
+                </tr>
+                <tr>
+                    <td>Espagueti</td>
+                    <td>1 libra</td>
+                </tr>
+                <tr>
+                    <td>Tomates</td>
+                    <td>4 unidades</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><strong>Paso 1:</strong> Cocinar espagueti......
+        </p>
+        <p><strong>Paso 2:</strong> Hacer la salsa.......
+        </p>
+        <p><strong>Paso 3:</strong> Mezclar todo.......
+        </p>
+        <p><em>Fuente: <a
+                    href="https://www.directoalpaladar.com/recetas-de-arroces/siete-maneras-cocinar-arroz-para-disfrutarlo-cada-dia-semana-forma-variada">Para
+                    más recetas visita nuetra página</a></em></p>
+    </section>
+    <button class="button"><a href="#inicio">Subir</a></button>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuenta Vocales</title>
+</head>
+
+<body>
+    <p>Resultados en la consola.</p>
+    <!-- 3. Contar el número de vocales en una cadena de texto
+    
+    Escribe una función que reciba una cadena de texto y que cuente el número de vocales que contiene. La función debe
+    devolver un número. -->
+
+    <script>
+        function CuentaVocales(cadena) {
+            let contador = 0
+            console.log("Longitud de la cadena : " + cadena.length)
+            for (let i = 0; i < cadena.length; i++) {
+                if (cadena[i] == "a" || cadena[i] == "A" ||
+                    cadena[i] == "e" || cadena[i] == "E" ||
+                    cadena[i] == "i" || cadena[i] == "I" ||
+                    cadena[i] == "o" || cadena[i] == "O" ||
+                    cadena[i] == "u" || cadena[i] == "U") {
+                    contador++
+                }
+            }
+            console.log("Cantidad total de vocales : " + contador)
+        }
+    </script>
+
+</body>
+
+</html>

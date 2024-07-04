@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+body {
+    background-color: black;
+    font-family: "Noto Sans JP", sans-serif;
+    color: grey;
+    background-image: url("Imagenes/FondoCon5.jfif");
+    background-repeat: round no-repeat;
+}
+.letterSmall {
+    font-size: 14px;
+}
+#login {
+    text-align: right;
+}
+#login a {
+    font-weight: 400;
+    color : white;
+    background-color: black;
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+#login a:hover{
+    color: black;
+    background-color: white;
+}
+nav {
+    padding-top: 10px;
+}
+#logo{
+    height: 100px;
+}
+h1 {
+    color: white;
+}
+#cta_banner {
+    text-align: center;
+    background-color: #6421ff;
+    text-decoration: none;
+    color: white;
+    padding: 10px 150px;
+    border-radius: 4px;
+}
+#cta_sub, #cta_prices{
+    color : white;
+    text-decoration: none;
+}
+#container1 {
+    width: 550px;
+    margin-left: 100px;
+}

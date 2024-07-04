@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sesion 26 6 junio</title>
+</head>
+<body>
+    
+<script>
+
+let ValorArticulo = parseInt (prompt("Ingrese el valor de la compra"))
+
+    console.log ("Valor de la compra es : ",ValorArticulo)
+    const iva = ValorArticulo*0.19
+    console.log ("El IVA de la compra es : ", iva)
+    const total = ValorArticulo + iva
+    console.log ("El Valor total de la compra es : ", total)
+
+</script>
+
+</body>
+</html>
+=============================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sesion 26 6 junio</title>
+</head>
+<body>
+    
+<script>
+
+const ladoA = parseInt(prompt ("Digite el tamaño del lado A :"))
+const ladoB = parseInt(prompt ("Digite el tamaño del lado B :"))
+const ladoC = parseInt(prompt ("Digite el tamaño del lado C :"))
+
+console.log ("El lado A es :",ladoA)
+console.log ("El lado B es :",ladoB)
+console.log ("El lado C es :",ladoC)
+
+
+if ( ladoA === ladoB && ladoB === ladoC  ){
+    console.log ("El triángulo es EQUILÁTERO")
+    }
+    else if ( ladoA === ladoB || ladoB === ladoC || ladoA === ladoC ) {
+        console.log("El triángulo es ISÓCELES")
+    }
+    else if (ladoA !== ladoB || ladoB !== ladoC || ladoA !== ladoC) {
+        console.log("El triángulo es ESCALENO")
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap - Ejercicio Individual</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div id="titulo" class="row">
+        <div
+          class="col-12 text-primary text-center m-4"
+          style="--bs-text-opacity: 0.75"
+        >
+          <h1>Advanced Search</h1>
+        </div>
+      </div>
+      <form id="formulario" class="form-control">
+        <div class="row" id="informacion">
+          <div class="col-12 col-md-6 col-lg-4 mb-4" id="nombres">
+            <label class="form-label" for="firstname">Nombres</label>
+            <input
+              class="form-control"
+              type="text"
+              id="firstname"
+              name="firstname"
+              placeholder="Escriba sus nombres"
+              required
+            />
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 mb-4" id="Apellidos">
+            <label class="form-label" for="apellido">Apellidos</label>
+            <input
+              class="form-control"
+              type="text"
+              id="apellido"
+              name="apellido"
+              placeholder="Escriba sus apellidos"
+              required
+            />
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 mb-4" id="pais">
+            <label class="form-label" for="pais">País</label>
+            <select class="form-select" id="pais">
+              <option value="" selected>Seleccione el país permitido.</option>
+              <option value="col">Colombia</option>
+              <option value="fra">Francia</option>
+              <option value="ale">Alemania</option>
+            </select>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 mb-4" id="numcel">
+            <label class="form-label" for="tele">Número de celular</label>
+            <input
+              class="form-control"
+              type="tel"
+              id="tele"
+              name="tele"
+              placeholder="Escriba su número de celular"
+            />
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 mb-4" id="edad">
+            <label class="form-label" for="edad">Edad</label>
+            <input
+              class="form-control"
+              type="text"
+              id="edad"
+              name="edad"
+              placeholder="Escriba su edad"
+            />
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 mb-4" id="correo">
+            <label class="form-label" for="email">Correo</label>
+            <input
+              class="form-control"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Escriba su correo"
+              required
+            />
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 mb-4" id="categoria">
+            <label class="form-label" for="cat">Categoría</label>
+            <select class="form-select" id="cat">
+              <option value="0" selected>Seleccione su categoría.</option>
+              <option value="2">Categoría 1</option>
+              <option value="3">Categoría 2</option>
+              <option value="1">Categoría 3</option>
+            </select>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 mb-4" id="niveledu">
+            <label class="form-label" for="nivel"
+              >Seleccione su nivel de educación.</label
+            >
+            <select class="form-select" id="nivel">
+              <option value="0" selected>Nivel de educación.</option>
+              <option value="1">Sin educación formal</option>
+              <option value="2">Primaria</option>
+              <option value="3">Secundaria</option>
+              <option value="4">Pregrado</option>
+              <option value="4">Posgrado</option>
+            </select>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 mb-4" id="genero">
+            <p class="p">Género</p>
+            <label class="form-check-label" for="sexo1">Masculino</label>
+            <input /*class="form-check-input" No me gusta como se ve */
+            type="radio" id="sexo1" name="sexo" value="mas" />
+            <label class="form-check-label" for="sexo2">Femenino</label>
+            <input /*class="form-check-input" No me gusta como se ve */
+            type="radio" id="sexo2" name="sexo" value="fem" />
+          </div>
+        </div>
+        <div class="row" id="boton">
+          <div class="col text-center m-4">
+            
+            <button class="btn btn-primary btn-lg" type="submit"><img src="buscar.png" style="width: 20px;" alt="Lupa"> Search</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

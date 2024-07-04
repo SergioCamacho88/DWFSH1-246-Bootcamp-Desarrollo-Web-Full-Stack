@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+}
+.ppal {
+    background-color: #a1dacb33;
+    box-shadow: 0px 0px 70px 0px rgba(103,138,32,0.30);
+    border-radius: 10px;
+    border: 1px solid black;
+    margin : 40px;
+    width: 650px;
+    height: 450px;
+}
+.contieneFoto {
+    width: 310;
+}
+.boton {
+    position: absolute;
+    top: 410px;
+    color: aliceblue;
+    background: rgb(75, 42, 165);
+    margin: 10px;
+    width: 100px;
+    height: 50px;
+}
+.lista{
+    position: absolute;
+    top: 300px;
+    left: 350px;
+    width: 300px;
+}
+.izq {
+    left: 500px;
+}
+.der {
+    left: 380px;
+}
+#mapa {
+    width: 270px;
+    margin: 0px 0px 180px 0px 
+}
+#titulo {
+    padding-top: 10px;
+    margin : 0;
+    width: auto;
+    text-align: center;
+    color: rgba(255, 99, 71,0.8);
+}
+#foto {
+    height: 360px;
+    width: 280px; 
+    margin: 20px;
+} 
