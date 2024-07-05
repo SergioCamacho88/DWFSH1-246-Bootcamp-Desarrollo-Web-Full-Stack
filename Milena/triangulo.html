@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const ladoA = prompt("Digite el lado A :")
+        const ladoB = prompt("Digite el lado B :")
+        const ladoC = prompt("Digite lado C: ")
+
+        if (ladoA === ladoB && ladoC) {
+            alert("Este triangulo es EQUILATERO")
+        }
+        else if (ladoA === ladoB || ladoB === ladoC || ladoA === ladoC) {
+            alert("Este triangulo es ISOCELES")
+        }
+        else
+        {
+            alert ("Este triangulo es escaleno")
+        }
+    </script>
+</body>
+
+</html>
