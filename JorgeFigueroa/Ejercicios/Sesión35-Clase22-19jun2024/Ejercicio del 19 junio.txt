@@ -1,0 +1,132 @@
+Desafío: descubrimientos famosos
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Challenge: Famous discoveries</title>
+    </head>
+    <body>
+    
+    <h1>Famous discoveries</h1>
+    
+    <h2 id="math-heading">Math discoveries</h2>
+    
+    <ul>
+    <li>323–283 BC – Euclid: wrote a series of 13 books on geometry called The Elements</li>
+    <li>Al-Khawarizmi (780-850): wrote the first major treatise on Algebra titled "Al-jabr wal-muqabaleh"</li>
+    </ul>
+    
+    <h2 id="science-heading">Science discoveries</h2>
+    <ul>
+        <li>1543 – Copernicus: discovered the heliocentric model of the solar system.
+</li>
+        <li>1672 – Sir Isaac Newton: discovers that white light is a spectrum of a mixture of distinct coloured rays.</li>
+    </ul>
+    
+    <a href="https://en.wikipedia.org/wiki/Timeline_of_scientific_discoveries">Read about more discoveries on Wikipedia.</a>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+    
+     var math = $("#math-heading");
+     math.text(math.text() + " ...asombroso!");
+     var science  = $("#science-heading");
+     science.text(science.text() + " ...asombroso!");
+    </script>
+    </body>
+</html>
+==================================================================================
+Desafío: la oruga que cambia
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Challenge: The changing caterpillar</title>
+    </head>
+    <body>
+    <h1>The Caterpillar</h1>
+    
+    <p>This is a <strong>caterpillar</strong> in its natural habitat:</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Monarch_caterpillar_on_swan_plant_branchlet.jpg/640px-Monarch_caterpillar_on_swan_plant_branchlet.jpg" width="400">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+    $("h1").text("La Mariposa")
+    $("p").html("Esta es la<strong> mariposa </strong> en su estado natural ")
+    $("img").attr("src","https://www.kasandbox.org/programming-images/animals/butterfly_monarch.png")
+    $("p").css("background-color","red")
+    </script>
+    
+    </body>
+</html>
+==================================================================================
+Desafío: creador de criaturas
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Challenge: Creature creator</title>
+        <style>
+            body {
+                font-family: sans-serif;
+            }
+            .result {
+                font-size: 20px;
+                font-weight: bold;
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Creature Creator</h1>
+        
+        <p>What happens when you combine these two animals?</p>
+        <img src="https://www.kasandbox.org/programming-images/animals/shark.png" height="150" alt="shark">
+        <img src="https://www.kasandbox.org/programming-images/animals/spider.png" height="150" alt="spider">
+        
+        <p class="result">You get a sharkspider!</p>
+        
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
+        <script>
+            var newP = $("<p>");
+            newP.text("Este es mi Tiburácnido");
+            $("body").append(newP);
+            newP.addClass("result")
+        </script>
+    </body>
+</html>
+==================================================================================
+Desafío: lenguaje descabellado
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Challenge: Loopy language</title>
+    </head>
+    <body>
+        
+        <h1>All about Pig Latin</h1>
+        <p>Pig Latin is a language game in which words in English are altered. The objective is to conceal the meaning of the words from others not familiar with the rules. The reference to Latin is a deliberate misnomer, as it is simply a form of jargon, used only for its English connotations as a strange and foreign-sounding language.</p>
+        <p>The origins of Pig Latin are unknown. A youthful Thomas Jefferson wrote letters to friends in Pig Latin.</p>
+        <p>For words that begin with consonant sounds, the initial consonant or consonant cluster is moved to the end of the word, and "ay" is added.</p>
+
+        
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
+        <script>
+// Takes a string and returns Pig Latin version of it
+var toPigLatin = function(str) {
+    if (!str.replace) {
+        return 'ERROR: Expected a string!';
+    }
+    return str.replace(/\b(\w)(\w+)\b/g, '$2-$1ay').toLowerCase();
+};
+
+// Iterate through each paragraph, call the toPigLatin function on it
+var $paragraphs = $("p");
+    $paragraphs.each(function(element,index){
+        var $paragraph = $(this)
+        $paragraphs.text(toPigLatin($paragraph.text()))
+            })
+        </script>
+    </body>
+</html>
+

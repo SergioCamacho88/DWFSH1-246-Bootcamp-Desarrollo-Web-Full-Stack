@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>PIEDRA - PAPEL - TIJERA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <style>
+            .shadow1 {
+                box-shadow:  10px 10px 25px 3px rgb(62, 78, 219);
+            }
+        </style>
+</head>
+
+<body>
+
+    <div id="contenedor" class="container-fluid bg-primary border border-primary-subtle border-5">
+        <div id="tituloPpal" class="row">
+            <div class="col-1">
+                <img src="Pulpo.png" class="position-relative z-2 bg-transparent ms-5 pt-2" alt="Piedra Papel Tijera" width="100px">
+            </div>
+            <div class="col-11">
+                <h1 class="h2 position-relative z-1 bg-danger m-5 p-1 text-light text-center border border-5 border-primary-subtle rounded-5 shadow-lg">PIEDRA - PAPEL - TIJERA</h1>
+            </div>
+        </div>
+        <div id="entradaYmarcador" class="row ">
+            <div id="entrada" class="col ">
+                <form class="mb-3">
+                    <div class="mb-3">
+                        <label for="totrondas" class="form-label">Cantidad de rondas a jugar</label>
+                        <input class="form-control shadow1" placeholder="Total de Rondas." type="number" id="totrondas" name="totrondas" min="1" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="rondasganar" class="form-label">Cantidad de rondas para ganar</label>
+                        <input class="form-control shadow1" type="number" id="rondasganar" name="rondasganar" placeholder="Menor o igual al total de rondas por jugar." min="1" required>
+                    </div>
+                </form>
+            </div>
+            <div id="marcador" class="col ">
+                <form class="mb-3">
+                    <div class="mb-3">
+                        <label for="totusu" class="form-label">Rondas Ganadas por el usuario</label>
+                        <input class="form-control shadow1" type="text" id="totusu" value ="0" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="totcompu" class="form-label">Rondas ganadas por el Computador</label>
+                        <input class="form-control shadow1" type="text" id="totcompu" value ="0" disabled>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="botones" class="row m-4 text-center">
+            <div class="col">
+                <button id="botonConmutado" class="btn btn-info btn-lg border-1 border-dark shadow1" type="button" onclick="conmuta()">A JUGAR!!!</button>
+            </div>
+        </div>
+        <h2 class="h2 text-white pb-4 pt-4 ">RESULTADOS</h2>
+        <div id="titulospeq" class="row">
+            <div class="col-2 text-white">RONDA</div>
+            <div class="col-2 text-white">USUARIO</div>
+            <div class="col-3 text-white">COMPUTADOR</div>
+            <div class="col-5 text-white">RESULTADO</div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        //Definición de variables globales
+        let ganacompu = 0
+        let ganausu = 0
+        var aux         // Variable global con la cantidad de "rondas necesarias para ganar"
+        var auxtot      // Variable global con la cantidad de "rondas a jugar"
+        const opciones = ["papel", "tijera", "piedra"]
+
+        function conmuta() {
+            let Boton = document.getElementById("botonConmutado")
+            let tipoBoton = Boton.innerHTML
+
+            if (tipoBoton == "A JUGAR!!!") {
+                BtnPpal()  //llama la funcion btnppal
+            } else {
+                UnaRonda() //llama la funcion unaronda
+            }
+        }
+        function getRandomIntInclusive(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        function BtnPpal() {
+            // Valida datos de entrada
+            const rondas = document.getElementsByName("totrondas")[0].value
+            auxtot = rondas
+            const ganaronda = document.getElementsByName("rondasganar")[0].value
+            let Boton = document.getElementById("botonConmutado")
+            aux = ganaronda
+
+            // document.getElementById("totusu").value = 0
+            // document.getElementById("totcompu").value = 0
+
+            if (rondas != 0 && ganaronda != 0) {
+                if (ganaronda <= rondas) {
+                    document.getElementById('totrondas').disabled = true
+                    document.getElementById('rondasganar').disabled = true
+                    Boton.innerHTML = "Jugar Una Ronda"
+                    UnaRonda()
+                } else {
+                    alert("ERROR !!!! La cantidad de rondas para ganar, no puede ser mayor que las rondas totales del juego. ")
+                }
+            } else {
+                alert("Los campos no pueden ser cero y deben tener un valor válido.")
+            }
+        } //del BtnPpal
+        function UnaRonda() {
+            let msg = ""
+            // Captura dato del usuario y calcula la opción de l computador
+            let computador = opciones[getRandomIntInclusive(0, 2)] //Cálculo de la opción del computador
+            let usuario = prompt("Digite su opción\n(papel, tijera o piedra): ") //Opción del usuario
+            usuario = usuario.toLowerCase()    // convierte todo a minúscula
+            usuario = usuario.trim()           // elimina espacios al principio y al final
+
+            if (usuario == "papel" || usuario == "tijera" || usuario == "piedra") {
+                if (computador == usuario) {
+                    msg = "Las opciones fueros iguales. EMPATE!!!!. OJO : ESTA RONDA ESTÁ ANULADA!!! SE REPITE !!!"
+                }
+                else if ((computador == "papel" && usuario == "tijera") ||
+                    (computador == "tijera" && usuario == "piedra") ||
+                    (computador == "piedra" && usuario == "papel")) {
+                    ganausu++
+                    msg = "Esta ronda la gana el USUARIO !!!"
+                    document.getElementById("totusu").value = ganausu
+                }
+                else {
+                    ganacompu++
+                    msg = "Esta ronda la gana el computador."
+                    document.getElementById("totcompu").value = ganacompu
+                }
+            }
+            else {
+                msg = "Opción de usuario INVÁLIDA. OJO : ESTA RONDA ESTÁ ANULADA!!! SE REPITE !!!"
+            }
+            CreaLinea((ganausu + ganacompu), usuario, computador, msg)
+
+            usuario = "======"
+            computador = "======"
+            if (ganausu == aux) {
+                msg= "FELICITACIONES GANÓ EL USUARIO!!!! MUY BIEN!!"
+                document.getElementById('botonConmutado').disabled = true
+                return(CreaLinea((ganausu + ganacompu), usuario, computador, msg))
+            }
+            if (ganacompu == aux) {
+                msg= "Ganó el computador!! Ummmm...."
+                document.getElementById('botonConmutado').disabled = true
+                return (CreaLinea((ganausu + ganacompu), usuario, computador, msg))
+            }
+            if ((ganausu + ganacompu) == auxtot) {
+                document.getElementById('botonConmutado').disabled = true
+                msg = "Llegaste al límite de jugadas SIN GANADOR. FIN DEL JUEGO"
+                return (CreaLinea((ganausu + ganacompu), "===", "===", msg))
+            }
+        }
+        function CreaLinea(ronda, opcusu, opccompu, menresult) {
+            // arma el primer campo del párrafo con el número de la ronda
+            let hijo1 = document.createElement("p");         // crea un nuevo elem
+            let contenido = document.createTextNode(ronda);  // y añade contenido
+            hijo1.appendChild(contenido);                     //añade texto al  elem creado.
+            hijo1.className = ("col-2")
+
+            // arma el segundo campo del párrafo con la info del usuario
+            let hijo2 = document.createElement("p");         // crea un nuevo elem
+            contenido = document.createTextNode(opcusu);  // y añade contenido
+            hijo2.appendChild(contenido);                     //añade texto al  elem creado.
+            hijo2.className = ("col-2")
+
+            // arma el tercer campo del párrafo con la info del computador
+            let hijo3 = document.createElement("p");         // crea un nuevo elem
+            contenido = document.createTextNode(opccompu);  // y añade contenido
+            hijo3.appendChild(contenido);                     //añade texto al  elem creado.
+            hijo3.className = ("col-3")
+
+            // arma el cuarto campo del párrafo con la info del resultado
+            let hijo4 = document.createElement("p");         // crea un nuevo elem
+            contenido = document.createTextNode(menresult);  // y añade contenido
+            hijo4.appendChild(contenido);                     //añade texto al  elem creado.
+            hijo4.className = ("col-5")
+
+            // Añade los 4 hijos al NUEVO padre
+            let padreFinal = document.createElement("div");         // crea un padre final
+
+            padreFinal.className = ("row  text-white border border-2")
+            padreFinal.appendChild(hijo1)
+            padreFinal.appendChild(hijo2)
+            padreFinal.appendChild(hijo3)
+            padreFinal.appendChild(hijo4)
+
+            // Añade el nuevo padre y sus hijos al contenedor
+            let ppal = document.getElementById("contenedor");
+            ppal.appendChild(padreFinal)
+        }
+
+    </script>
+</body>
+
+</html>

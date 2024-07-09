@@ -1,0 +1,30 @@
+body{
+    margin: 20;
+    text-align: center;
+    font-family: sans-serif;
+    background: rgba(0, 255, 255, 0.1);
+}
+h1 {
+    font-family: sans-serif;
+    font-size: 40px;
+    text-align: center;
+    color: red;
+}
+img {
+    width: 400px;
+}
+p {
+    text-align: justify;
+    padding: 20px ;
+    border: 2px solid black;
+    border-radius: 20px;
+    margin: 20px;
+    background: rgba(127, 255, 212,0.2);
+}
+.imagen {
+    border-radius: 100px;
+}
+.link {
+    font-size: 40px;
+    padding: 4px;
+}

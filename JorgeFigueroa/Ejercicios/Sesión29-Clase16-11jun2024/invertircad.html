@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invertir Cadena</title>
+</head>
+
+<body>
+    <p>resultado a la consola</p>
+    <script>
+        function invertircad(cadena) {
+            let invertida = []
+            for (i = (cadena.length - 1), cont = 0;i >= 0; i--, cont++) {
+                invertida[cont] = cadena[i]
+            }
+            console.log(invertida.join(""))
+        }
+    </script>
+</body>
+
+</html>

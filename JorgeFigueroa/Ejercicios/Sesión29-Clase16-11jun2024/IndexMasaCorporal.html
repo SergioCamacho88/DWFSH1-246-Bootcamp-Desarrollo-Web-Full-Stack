@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masa Corporal</title>
+</head>
+<body>
+    <p>resultado en la consola</p>
+    <!-- 1. Calcular el IMC (Índice de Masa Corporal)
+    
+    Escribe una función que reciba dos parámetros: peso y altura, y que calcule el IMC (Índice de Masa Corporal) de la
+    persona. La función debe devolver un string indicando si la persona está:
+    Bajo de peso si el IMC es menor a 18.5 --
+    Normal si el IMC está entre 18.5 y 24.9 --
+    Sobrepeso si el IMC está entre 25 y 29.9
+    Obesa si el IMC es igual o mayor a 30
+    FORMULA: const imc = peso / (altura * altura); -->
+<script>
+    function IMC (peso, altura) {
+        const imc = peso / (altura * altura)
+        if ( imc < 18.5) {
+            return "Usted se encuentra bajo de peso."
+        } else if (imc < 25){
+            return "Usted se encuentra con un peso normal."
+        } else if (imc < 30) {
+            return "Usted se encuentra con Sobrepeso."
+        } else {
+                return "Usted se encuentra OBESO."
+        }
+    }
+    console.log ( IMC( 62,1.7) )
+</script>
+
+</body>
+</html>

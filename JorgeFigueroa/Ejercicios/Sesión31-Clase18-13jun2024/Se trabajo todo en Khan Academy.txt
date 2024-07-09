@@ -1,0 +1,244 @@
+Desafío: modernizador de las cuestiones
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Challenge: Query modernizer</title>
+    </head>
+    <body>
+    
+    <h1>Isaac Newton's Queries</h1>
+    <p>Selected Queries from Newton’s Opticks, 4th ed.</p>
+    <ul>
+    <li><em>Query 19:</em> <span class="doth">Doth</span> not the Refraction of Light proceed from the different density of this Aethereal Medium in different places, the Light receeding always from the denser parts of the Medium? And is not the density thereof always greater in free and open Spaces devoid of Air and other grosser Bodies, than within the pores of Water, Glass, Crystal, Gems, and other compact Bodies? For when light passes through Glass or Crystal, and falling very obliquely upon the farther surface thereof is totally reflected, the total Reflexion thereof ought to proceed rather from the density and vigour of the Medium without and beyond the Glass, than from the rarity and weakness thereof.</li>
+ 
+    <li><em>Query 20:</em> <span class="doth">Doth</span> not this Aethereal Medium in passing out of Water, Glass, Crystal and other compact and dense Bodies into empty Spaces, grown denser and denser by degrees, and by that means refract the Rays of Light not in a point, but by bending them gradually in curve Lines? And <span class="doth">doth</span> not the gradual condensation of this Medium extend to some distance from the Bodies, and thereby cause the Inflexions of the Rays of Light, which pass by the edges of dense Bodies, at some distance from the Bodies?</li>
+    </ul>
+    
+    <p>Language note: Newton originally used <span class="doth">"doth"</span>, which is the same as "does".</p>
+    
+    <p><a href="http://homepages.wmich.edu/~mcgrew/nq.htm">See more</a></p>
+    
+    <script>
+        // Step 1: Store all doth that are inside lis in dothEls
+        var dothEls=document.querySelectorAll("ul .doth");
+        // Step 2: Iterate through them and change doth to does
+        for (var i = 0 ; i < dothEls.length ; i++ ) {
+            dothEls[i].innerHTML = "does";
+        }
+    </script>
+    </body>
+</html>
+=================================================================================================================
+Desafío: atributos de avatares
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Challenge: Avatar attributes</title>
+    </head>
+    <body>
+    
+    <h1>Which avatar is which?</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Attributes</th>
+                <th>Avatar</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                <ul>
+                    <li>pink</li>
+                    <li>innocent</li>
+                </ul>
+            </td>
+            <td>
+                <img src="https://www.kasandbox.org/programming-images/avatars/marcimus.png" id="avatar-1" alt="Marcimus, A pink, innocent avatar">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <ul>
+                    <li>green</li>
+                    <li>ANGRY</li>
+                </ul>
+            </td>
+            <td>
+                <img src="https://www.kasandbox.org/programming-images/avatars/old-spice-man.png" id="avatar-2" alt="Old Spice Mann, A green, angry avatar">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <ul>
+                    <li>orange</li>
+                    <li>multi-legged</li>
+                </ul>
+            </td>
+            <td>
+                <img src="https://www.kasandbox.org/programming-images/avatars/orange-juice-squid.png" id="avatar-3" alt="Orange Juice Squid, An orange, multi-legged avatar">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    
+        <script>
+        var avatarEls = document.getElementsByTagName("img");
+        for (var i=0 ; i<avatarEls.length ;i++ ){
+            avatarEls[i].height = "100"
+            avatarEls[i].title = avatarEls[i].alt 
+        }
+        </script>
+    </body>
+</html>
+=================================================================================================================
+Desafío: guía de estilo
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Challenge: Style guide</title>
+        
+    </head>
+    <body>
+
+    <h1>Style guide</h1>
+
+    <p>The hottest color to wear right now is:
+        <span id="trendy-color">?</span>
+    </p>
+    
+    <p>This is the trendy way to sign an autograph:
+        <span id="trendy-handwriting">?</span>
+    </p>
+    
+    <p>This is the trendy way to frame photographs:
+        <br>
+        <img id="trendy-frame" src="https://www.kasandbox.org/programming-images/avatars/mr-pink.png" alt="Cool avatar">
+    </p>
+    
+    
+    <script>
+    var colorEl = document.getElementById("trendy-color");
+    var handEl  = document.getElementById("trendy-handwriting");
+    var frameEl = document.getElementById("trendy-frame");
+    colorEl.innerHTML = "Naranja"
+    colorEl.style.color = "orange"
+    handEl.innerHTML ="jjjjjjjsjs"
+    handEl.style.fontFamily = "cursive"
+    frameEl.style.border = "10px solid black"
+    </script>
+    
+    </body>
+</html>
+=================================================================================================================
+Desafío: clasificación
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Challenge: Classification</title>
+        <style>
+        .right-answer {
+            background: rgb(0, 255, 9);
+        }
+        
+        .wrong-answer { 
+            background: rgb(237, 28, 0);
+        }
+        </style>
+    </head>
+    <body>
+        
+        <h2>Pop Quiz: Animal Classification</h2>
+        
+        <p>Which animal class do humans belong to?</p>
+        <ul id="answers">
+            <li>Mammalia</li>
+            <li>Ascidiacea</li>
+            <li>Reptilia</li>
+        </ul>
+        
+        <script>
+        var answers = document.querySelectorAll('#answers li');
+        var rightAnswer = answers[0];
+        rightAnswer.className = "right-answer";
+        var wrongAnswer1 = answers[1];
+        var wrongAnswer2 = answers[2];
+        wrongAnswer1.className = "wrong-answer";
+        wrongAnswer2.className = "wrong-answer";
+        </script>
+    </body>
+</html>
+=================================================================================================================
+Desafío: la historia interior
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Challenge: The inside story</title>
+    </head>
+    <body>
+        <h1>The inside story: Why is Oh Noes so sad?</h1>
+        
+        <p>We had an exclusive interview with Oh Noes guy, the error buddy, and we asked him the question that all of you were wondering about: "Why do you always seem so sad?" Here's his shocking reply:</p>
+        <p id="ohnoes-says"></p>
+        
+        <p>We asked Winston for comment, and this is all he would say about it:</p>
+        <p id="winston-says"></p>
+        <script>
+            var ohnoesSays = document.getElementById("ohnoes-says");
+            var winstonSays = document.getElementById("winston-says");
+            ohnoesSays.innerHTML = "bla bla <strong>bla</strong> bla bla"
+            winstonSays.textContent = "bla bla bla"
+        </script>
+    </body>
+</html>
+=================================================================================================================
+Desafío: crea un sistema solar
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Challenge: Create a solar system</title>
+        <style>
+            body {
+                background-color: black;
+                padding: 10px;
+            }
+            .planet {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                text-align: center;
+                padding: 10px;
+                position: relative;
+                
+            }
+            .moon {
+                position: absolute;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                background: rgb(237, 237, 237);
+            }
+        </style>
+    </head>
+    <body>
+
+    
+    <script>
+        var div1 = document.createElement("div")
+        div1.className="planet"
+        div1.style.backgroundColor = "burlywood";
+        document.body.appendChild(div1)
+        var div2 = document.createElement("div")
+        div2.className="moon"
+        div1.appendChild(div2)
+    </script>
+    </body>
+</html>
+=================================================================================================================

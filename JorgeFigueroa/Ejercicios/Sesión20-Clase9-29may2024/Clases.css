@@ -1,0 +1,42 @@
+.boton {
+    position: absolute;
+    top: 250px;
+    color: aliceblue;
+    background: rgb(75, 42, 165);
+    /* padding: 50px; */
+    margin: 10px;
+    width: 100px;
+    height: 50px;
+    ;
+}
+.izq {
+    left: 150px;
+}
+.der {
+    left: 30px;
+}
+#mapa {
+    position: absolute;
+    left: 300px;
+    top: 60px;
+    width: 100px;
+}
+#titulo {
+    position: absolute;
+    left: 10px;
+    top: 0px;
+    width: 600px;
+    /* box-sizing: border-box; */
+}
+#foto {
+    position: absolute;
+    top: 60px;
+    left: 10px;
+    width: 200px;
+}
+.lista{
+    position: absolute;
+    top: 200px;
+    left: 300px;
+    width: 200px;
+}

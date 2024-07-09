@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Ingreso</title>
+</head>
+
+<body>
+    <h1>FORMULARIO DE INGRESO</h1>
+    <hr>
+    <form method="post" action="https://www.w3school.com/action_page.php" target="_blank">
+        <fieldset id="">
+            <legend>DATOS BáSICOS</legend>
+            <label for="nombre">Nombre Completos</label>
+            <input id="nombre" type="text" placeholder="ej. Joe" required></br>
+            <label for="apellido">Apellidos Completos</label>
+            <input id="apellido" type="text" placeholder="ej. Rodriguez Guzmán" required></br>
+            <label for="tel">Número celular de Contacto</label>
+            <input id="tel" type="tel" placeholder="ej. 305555222" required></br>
+        </fieldset>
+        </br>
+        <label for="pais">Sleccione su pais de Origen:</label>
+        <select name="pais" id="pais" required>
+            <option value="1">Colombia</option>
+            <option value="2">Francia</option>
+            <option value="3">Alemania</option>
+            <option value="4">Otros</option>
+        </select>
+        </br></br>
+        <p>Seleccione su Género</p>
+        <input type="radio" id="mas" name="sexo" value="1">
+        <label for="mas">Masculino</label><br>
+        <input type="radio" id="fem" name="sexo" value="2">
+        <label for="fem">Femenino</label>
+        </br></br>
+        <label for="files">Foto de tu docuemnto de Identidad, por ambos lados.</label><br>
+        <input type="file" id="files" name="files" multiple>
+        </br></br>
+        <label for="">Descripción</label></br>
+        <textarea type="text" rows="5"></textarea>
+        </br></br>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Borrar">
+    </form>
+    </br>
+    <hr>
+    <a href="controlDeCompras.html" target="_self" rel="noopener noreferrer">Volver a la Pantalla principal.</a>
+</body>
+
+</html>
