@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Project: Interactive slideshow</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <br>
+    <img id="imagen" width="200" height="100" alt="Mis Imágenes"
+        src="https://www.kasandbox.org/programming-images/food/mushroom.png">
+    <br>
+    <button id="btnPrev" type="button">← Prev</button>
+    <button id="btnNext" type="button">Next ➡</button>
+    <form>
+        <label for="nuevoArchivo">Nueva imagen</label>
+        <input type="file" name="nuevoArchivo" id="nuevoArchivo">
+        <br>
+        <button id="btnNew" type="button">Agregar imagen a la Base de Datos</button>
+    </form>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        imagenes = [
+            "https://www.kasandbox.org/programming-images/food/mushroom.png",
+            "https://upload.wikimedia.org/wikipedia/commons/4/40/Chrysopelea_taprobanica.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/a/aa/Alopekis_white_male.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/f/f2/Crocodylus_acutus_mexico_02-edit1.jpg",
+            "https://www.kasandbox.org/programming-images/animals/cat.png",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Monarch_caterpillar_on_swan_plant_branchlet.jpg/640px-Monarch_caterpillar_on_swan_plant_branchlet.jpg"]
+        var posImagen = imagenes.length - 1
+
+        $("#btnNew").on("click", function () {
+            var nuevaImagen = $("#nuevoArchivo").val()
+            imagenes.push(nuevaImagen)
+        })
+
+        $("#btnNext").on("click", function () {
+            console.log("---- posicion inicial de la imagen->", posImagen)
+            posImagen++
+            console.log("posicion incrementada de la imagen para calcular->", posImagen)
+            posImagen %= imagenes.length
+            console.log("posicion de la imagen calculada->", posImagen)
+            $("#imagen").attr("src", imagenes[posImagen]);
+        })
+
+
+        $("#btnPrev").on("click", function () {
+            console.log("---- posicion inicial de la imagen->", posImagen)
+            if (posImagen == 0) {
+                posImagen = imagenes.length - 1
+            } else {
+                posImagen--
+            }
+            console.log("posicion de la imagen calculada->", posImagen)
+            $("#imagen").attr("src", imagenes[posImagen]);
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Juego de Palabras </title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    form {
+      font-size: 1.5em;
+    }
+
+    .scrambled,
+    input,
+    button {
+      font-family: monospace;
+      font-size: 2em;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Juego de Palabras!</h1>
+  <form id="joke-form">
+    <label>
+      Descifra estas letras para formar una palabra:<Br>
+      <span class="scrambled" id="palabraDesordenada">REYJUQ</span>
+      <br>
+      <input type="text" size="10">
+    </label>
+    <button type="submit">Check</button>
+  </form>
+  <div id="results"></div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script>
+    // when the user submits the form,
+    //   check that their answer is correct
+    //   and show them appropriate message
+    $("<h2>").attr("id", "resultado").text("A jugar!!").appendTo("body");
+    var palabras = [{
+      ordenado: "CASA",
+      desordenado: "SAAC"
+    }, {
+      ordenado: "MURCIELAGO",
+      desordenado: "UCLAMREGIO"
+    }, {
+      ordenado: "ANIMAL",
+      desordenado: "LANIMA"
+    }, {
+      ordenado: "CELULAR",
+      desordenado: "RLUEAC"
+    }];
+
+    var palabraOrdenada = "";
+
+    crearPalabra();
+
+    function crearPalabra() {
+      var numRandom = parseInt(Math.random() * (palabras.length));
+      console.log("numRandom: ", numRandom);
+      $("#palabraDesordenada").text(palabras[numRandom].desordenado)
+      palabraOrdenada = palabras[numRandom].ordenado;
+      console.log("palabraOrdenada: ", palabraOrdenada);
+    }
+
+    $("#joke-form").on("submit", function (e) {
+
+      e.preventDefault();
+      var $valInput = $(this).find("[type=text]");
+      var word = $valInput.val().toUpperCase();
+      console.log("word: ", word);
+      if (word == palabraOrdenada) {
+        $("#resultado").text("GANASTE!!");
+        setTimeout(() => {
+          crearPalabra();
+          $valInput.val("");
+          $("#resultado").text("A jugar!!");
+        }, 2000);
+      } else {
+        $("#resultado").text("Sigue intentando!!");
+      }
+    });
+
+  </script>
+</body>
+
+</html>

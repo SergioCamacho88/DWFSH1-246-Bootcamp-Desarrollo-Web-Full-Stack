@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Challenge: Daisy chain</title>
+    </head>
+    <body>
+
+        
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
+        <script>
+        // You can use the daisy image at: 
+        // https://upload.wikimedia.org/wikipedia/commons/2/29/English_Daisy_(Bellis_Perennis).jpg
+        // var $imagen = $("<img>")
+        // $imagen.attr("src","https://upload.wikimedia.org/wikipedia/commons/2/29/English_Daisy_(Bellis_Perennis).jpg")
+        // $imagen.attr("width","100")
+        // $imagen.attr("alt","Imagen de margarita")
+        // $imagen.appendTo("body")
+        for (let i = 0; i < 15 ; i++) {
+            $("<img>").attr("src","https://upload.wikimedia.org/wikipedia/commons/2/29/English_Daisy_(Bellis_Perennis).jpg").attr("width","100").attr("alt","Imagen de margarita").appendTo("body")
+        }
+        </script>
+    </body>
+</html>
+
+=================================================================================================
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Challenge: Croc Clicker</title>
+    </head>
+    <body>
+    
+    <h1>Challenge: Croc Clicker</h1>
+    <img id="crocs" src="https://www.kasandbox.org/programming-images/animals/crocodiles.png" width="300" alt="Crocodiles chilling">
+    <div id="results"></div>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+    var numClicks = 0
+    $("#crocs").on("click",function(){
+        numClicks++
+        $("#results").text("Usted hizo click " + numClicks +" veces.")
+    })
+    </script>
+    
+
+    </body>
+</html>
+===============================================================================================
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Challenge: Spot the Dog</title>
+        <style>
+            .dot {
+                border-radius: 10px;
+                background: black;
+                position: absolute;
+                width: 10px;
+                height: 10px;
+            }
+        </style>
+    </head>
+    <body>
+    
+    <img id="dog-pic" src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Alopekis_white_male.jpg" width="500" alt="White dog">
+    
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+    $("#dog-pic").on("click", function(event) {
+        var $dot = $("<div></div>");
+        $dot.addClass("dot").css({position:"absolute",top:event.pageY+"px",left:event.pageX+"px"});
+        $dot.appendTo("body");
+        
+        
+    });
+    </script>
+    
+
+    </body>
+</html>
+=============================================================================================
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Challenge: jQuery trivia quiz</title>
+        <style>
+            #result {
+                background: rgb(255, 246, 204);
+                border: 2px dotted gold;
+                font-size: 24px;
+                height: 60px;
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+    <body>
+
+    <h1>jQuery Quiz</h1>
+    
+    <form id="trivia-form">
+        <label>
+            Who invented jQuery?<br>
+            <select id="trivia-answer">
+                <option value="eich">Brendan Eich</option>
+                <option value="resig">John Resig</option>
+                <option value="rossum">Guido van Rossum</option>
+                <option value="berners">Tim Berners-Lee</option>
+            </select>
+        </label> <br>
+        <button type="submit">Check Answer</button>
+    </form>
+    <div id="result"></div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        $("#trivia-form").on("submit", function(event){
+            event.preventDefault();
+            var $resultado = $("#trivia-answer").val()
+            if ( $resultado === "resig"){
+                $("#result").text("Muy bien!!!")
+            } else {
+                $("#result").text("Muy mal!!!...Sigue intentando y estudia más")
+            }
+            
+        });
+    </script>
+    </body>
+</html>
+===========================================================================
