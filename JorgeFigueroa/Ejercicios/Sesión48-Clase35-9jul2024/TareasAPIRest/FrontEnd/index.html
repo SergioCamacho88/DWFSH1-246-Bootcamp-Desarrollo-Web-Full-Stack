@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio de API Rest</title>
+    <style>
+    section {
+        background-color: antiquewhite;
+        width : 70%;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid rgba(71, 65, 65, 0.3);
+        margin: 15px 10px;
+        box-shadow: 5px 5px 10px rgba(71, 65, 65, 0.3);
+    }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Ejercicio Completo de FronEnd -> de API Rest -> Base de datos Postgres</h1>
+    </div>
+    <div>
+        <section>
+            <h1>Lista Ordenada</h1>
+            <ol id="lista">  <!-- lista donde se está mostrando la info -->
+            </ol>
+        </section>
+        <form>
+            <section>
+                <label for="nombre">Nombre :</label>
+                <input id="nombre" type="text" >
+            </section>
+            <section style="margin: 10px">
+                <p>Seleccione su género:</p>
+                <label for="masculino">Masculino</label>
+                <input type="radio" id="masculino" name="genero" value="masculino">
+                <label for="femenino">Femenino</label>
+                <input type="radio" id="femenino" name="genero" value="femenino">
+            </section>
+            <section>
+                <p>Seleccione su nacionalidad:</p>
+                <select name="select" id="nacionalidad">
+                    <option value="Colombia">Colombia</option>
+                    <option value="Francia" selected>Francia</option>
+                    <option value="España" selected>España</option>
+                    <option value="Alemania" selected>Alemania</option>
+                    <option value="Otros">Otros</option>
+                </select>
+            </section>
+            <section>
+                <button type="button" onclick="guardar()">Guardar</button>
+                <button onclick = "getlistado()" >Consultar Toda la Lista</button>
+            </section>
+        </form>
+        
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        var idRegistro = 0
+
+        getlistado()  ///muestra el listado al cargar la pag.
+
+        // funciones de botones en la línea
+        function getlistado () {
+            var settings = {
+                "url": "http://localhost:4000/api/ejercicio/",
+                "method": "GET",
+                "timeout": 0
+            };
+            $.ajax(settings).done((response) => {
+                mostrarLista(response)
+            })
+        }
+        
+        function mostrarLista(data) {
+            idRegistro = 0
+            $("#lista").html("")
+            for (let index = 0; index < data.length; index++) {
+                const element = data[index];
+                // forma larga de insertar un <li>
+                // let $var = $("<li>")   //creo el elemento
+                // $var.text(element.nombres + " " + element.nacionalidad)
+                // let lista = $("#lista")
+                // lista.append($var)
+
+                // forma de insertar un <li> sin botones
+                // $("<li>").text(element.nombres + " --> " + element.nacionalidad).appendTo("#lista")
+
+                // forma de insertar un <li> con botones
+                $("<li>").html( element.nombres +" "+ element.nacionalidad +" "+ element.genero +"<button onclick='eliminarReg("+element.id+")'>Eliminar</button><button onclick='obtenerRegPorId(" + element.id +")'>Actualizar</button>").appendTo("#lista")
+            }
+        }
+
+        function guardar() {
+            //let verbo = ""
+            // if (idRegistro == 0) {
+            //     verbo = "POST"
+            // } else {
+            //     verbo = "PUT"
+            // }
+            let verbo = (idRegistro) ? "PUT" : "POST"
+            var settings = {
+                "url": "http://localhost:4000/api/ejercicio",
+                "method": verbo,
+                "timeout": 0,
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "data": JSON.stringify({
+                    "id": idRegistro,
+                    "nombres": $("#nombre").val(),
+                    "genero": $("input[name='genero']:checked").val(),
+                    "nacionalidad": $("#nacionalidad").val()
+                }),
+            };
+
+            $.ajax(settings).done(function (response) {
+                getlistado()
+            });
+        }
+
+        // funciones de botones en la línea
+        function eliminarReg(id) {
+            var settings = {
+                "url": "http://localhost:4000/api/ejercicio/" + id,
+                "method": "DELETE",
+                "timeout": 0,
+            };
+
+            $.ajax(settings).done(function (response) {
+                getlistado()
+            });
+        }
+        
+        function obtenerRegPorId(id) {
+            var settings = {
+                "url": "http://localhost:4000/api/ejercicio/" + id,
+                "method": "GET",
+                "timeout": 0,
+            };
+
+            $.ajax(settings).done(function (response) {
+                idRegistro = response[0].id
+                $("#nombre").val(response[0].nombres)
+                $('input[name="genero"][value='+ response[0].genero +']').attr('checked', true);
+                $("#nacionalidad").val(response[0].nacionalidad)
+            });
+        }
+
+    </script>
+</body>
+</html>

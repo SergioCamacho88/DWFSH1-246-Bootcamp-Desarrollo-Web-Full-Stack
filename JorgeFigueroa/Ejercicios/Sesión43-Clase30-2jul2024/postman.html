@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postman</title>
+</head>
+<body>
+
+    <ol id="lista">
+    </ol>
+
+    <button type="button" onclick="con()">Consulta lista</button>
+    <button type="button" onclick="adi()">Crea elemento</button>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+    function adi() {
+        var settings = {
+            "url": "https://api.restful-api.dev/objects",
+            "method": "POST",
+            "timeout": 0,
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "data": JSON.stringify({
+                    
+                "name": $("#nombreproducto").val(),
+                "data": {
+                    "year": 2019,
+                    "price": 1849.99,
+                    "CPU model": "Intel Core i9",
+                    "Hard disk size": "1 TB"
+                }
+            }),
+        };
+
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+            $("#lista").append("<li>" + response.data.price + "</li>");
+        }).fail(function () {
+            alert("error");
+        })
+    }
+
+    function con() {
+        var settings = {
+            "url": "https://api.restful-api.dev/objects",
+            "method": "GET",
+            "timeout": 0,
+        };
+        $.ajax(settings).done(function (response) {
+            const respuesta = response;
+            console.log(respuesta);
+            for (let index = 0; index < respuesta.length; index++) {
+                const elemento = respuesta[index];
+                console.log(elemento);
+                $("#lista").append("<li>"+elemento.name+"</li>");
+            }
+        });
+    }
+
+    </script>
+
+</body>
+</html>
